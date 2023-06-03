@@ -1,0 +1,237 @@
+/* ====================================
+5. Banner
+ ====================================== */
+.promo {
+    overflow: hidden;
+}
+.cat-promo{
+    padding: 9.375rem 0;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    &::before{
+        background: #302217;
+        @include opacity(.7);
+    }
+}
+.promo-txt {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    padding: 0 1.875rem;
+    height: 100%;
+
+    @include mobile {
+        height: 31.25rem;
+    }
+}
+
+.hero {
+    position: relative;
+    padding-top: 3.125rem;
+
+    @include mobile {
+        padding-top: 0;
+    }
+
+    .item {
+        position: relative;
+        height: 34.375rem;
+
+        .item-bg {
+            height: 100%;
+            width: 62%;
+            margin-right: 0;
+            margin-left: auto;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .item-txt {
+            max-width: 55%;
+            top: 50%;
+            position: absolute;
+            transform: translateY(-50%);
+            left: 0;
+
+            img {
+                width: auto;
+                display: inline;
+                margin-left: 5px;
+            }
+        }
+
+        @include mobile {
+            .item-bg {
+                width: 100%;
+            }
+
+            .item-txt {
+                max-width: 90%;
+                left: 5%;
+                top: 60%;
+                background: rgba(255, 255, 255, .6);
+                @include border-radius(5px);
+                padding: 1.25rem;
+                box-shadow: 0 0 1.25rem rgba(0, 0, 0, .1);
+            }
+        }
+    }
+
+    .hero .owl-carousel .owl-nav {
+        color: #fff;
+        width: 9.375rem;
+        height: 1.875rem;
+        position: absolute;
+        left: 65%;
+        bottom: 1.5625rem;
+    }
+
+    .owl-carousel .owl-nav {
+        width: 11.5625rem;
+        height: 1.875rem;
+        position: absolute;
+        left: 64%;
+        bottom: 1.875rem;
+
+        @include mobile {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        &::before {
+            position: absolute;
+            content: "";
+            height: 0.0625rem;
+            width: 45%;
+            left: 50%;
+            top: 0.8125rem;
+            transform: translateX(-50%);
+            background: $white;
+        }
+
+        >button {
+            left: 0;
+            @extend .fs-sm;
+            color: $white;
+            @include transition();
+            &:hover {
+                color: $primary;
+            }
+            &.owl-next {
+                right: 0;
+                left: auto;
+            }
+        }
+    }
+}
+
+#hero-slider-two {
+    .item {
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: auto;
+        padding: 21.875rem 0 12.5rem;
+        @include tablet{
+            padding: 17.5rem 0 9.375rem;
+        }
+        &.overly::before {
+            background-color: $black;
+            @include opacity(.57);
+        }
+
+        .entry-meta {
+            text-transform: uppercase;
+            font-family: $roboto;
+            font-size: 0.75rem;
+            padding: 0 2.8125rem;
+            letter-spacing: 0.125rem;
+            @extend .overly;
+
+            &::before,
+            &::after {
+                width: 1.875rem;
+                height: 0.0625rem;
+                background: $white;
+                top: 0.3125rem;
+            }
+
+            &::after {
+                position: absolute;
+                content: "";
+                left: auto;
+                right: 0;
+            }
+        }
+
+        h1 {
+            font-size: 2.875rem;
+            @include tablet{
+                font-size: 2.5rem;
+            }
+          
+        }
+        @include mobile{
+            padding: 10.9375rem 0 6.25rem;
+            h1{
+                font-size: 2.1875rem;
+            }
+        }
+    }
+}
+
+.hero-slider {
+    .owl-carousel {
+        .owl-nav {
+            position: absolute;
+            top: 50%;
+            left: 5rem;
+
+            button {
+                color: $white;
+                height: 2.5rem;
+                width: 2.5rem;
+                line-height: 2.5rem;
+                border: 0.125rem solid $white;
+                border-radius: 50%;
+                display: block;
+                margin: 0.9375rem 0;
+                @include transition();
+                &.owl-next {
+                    left: 3.75rem;
+                }
+                &:hover{
+                    color: $color;
+                    background: $white;
+                }
+            }
+        }
+    }
+
+}
+
+#hero-slider-two {
+    &.owl-carousel .owl-nav {
+        top: 55%;
+
+        button {
+            @include tablet{
+                left: -2.5rem;
+            }
+            &.owl-next {
+                left: 3.125rem;
+                top: 3.75rem;
+                @include tablet{
+                    left: -2.5rem;
+                }
+            }
+        }
+        @include mobile{
+            top: 65%;
+            left: 0;
+        }
+       
+    }
+}

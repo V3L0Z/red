@@ -1,0 +1,90 @@
+/* ====================================
+12. Testimonials
+ ====================================== */
+
+.single-quote {
+    @extend .overly;
+    padding-top: 1.875rem;
+    &::before {
+        background: transparent;
+        content: "quote";
+        color: $dark;
+        text-align: center;
+        @include opacity(.05);
+        font-size: 24.6875rem;
+        top: 1.25rem;
+        font-family: $heading-font;
+        font-weight: 700;
+    }
+
+    h2 {
+        font-size: 2.75rem;
+        line-height: 3.5625rem;
+        margin-bottom: 1.875rem;
+        color: #121213;
+    }
+
+    p {
+        text-transform: uppercase;
+        color: #979797;
+    }
+    @include tablet{
+        &::before{
+            font-size: 18.75rem;
+        }
+        h2 {
+            font-size: 2.5rem;
+            line-height: 3.125rem;
+        }
+    }
+    @include mobile{
+        &::before{
+            font-size: 10rem;
+        }
+        h2 {
+            font-size: 1.875rem;
+            line-height: 2.5rem;
+        }
+    }
+}
+
+.testimonial {
+    @extend .overly;
+
+    &:before,&::after {
+        font-family: "Font Awesome 5 Free";
+        content: "\f10d";
+        display: inline-block;
+        background: none;
+        font-weight: 900;
+        font-size: 2.8125rem;
+        color: $primary;
+        text-align: center;
+    }
+    &::after{
+        content: "\f10e";
+        position: absolute;
+        width: 100%;
+        top: auto;
+        bottom: 0;
+    }
+    .owl-nav button {
+        top: 35%;
+        @include transition();
+        @include mobile{
+            display: none;
+        }
+        @include tablet{
+            left: 1.25rem;
+            &.owl-next{
+                right: 1.25rem;
+            }
+        }
+        i {
+            font-size: 1.375rem;
+        }
+        &:hover {
+            color: $primary;
+        }
+    }
+}

@@ -1,0 +1,352 @@
+/*===============================================
+2. Common CSS
+ ===============================================*/
+.overly {
+    position: relative;
+    z-index: 1;
+
+    &::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: $primary;
+    }
+}
+
+.py-10 {
+    padding: 6.25rem 0rem;
+
+    @include tablet {
+        padding: 5rem 0rem;
+    }
+
+    @include mobile {
+        padding: 3.75rem 0rem;
+    }
+}
+
+
+.sec-title {
+    font-size: 2.25rem;
+    text-transform: capitalize;
+    margin-bottom: 1.875rem;
+    line-height: 3.125rem;
+
+    @include notepad {
+        font-size: 2.125rem;
+    }
+
+    @include mobile {
+        font-size: 2rem;
+    }
+
+    @include tablet {
+        font-size: 2.125rem;
+    }
+}
+
+.title-sm {
+    @extend h5;
+    font-size: 18px;
+    margin-bottom: 0.1875rem;
+}
+
+.fs-sm {
+    font-family: $roboto;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 400;
+    font-size: 0.75rem;
+    color: $gray-b;
+}
+
+.border-line {
+    border-top: 0.0625rem solid $border-color;
+    @extend .overly;
+
+    &::before {
+        height: 0.0625rem;
+        background: $border-color;
+        top: 8px;
+    }
+}
+
+.section-title {
+    font-size: 2.5625rem;
+    margin-bottom: 4.375rem;
+    display: inline-block;
+    padding: 0 7rem;
+    text-align: center;
+    @extend .overly;
+
+    &::before,
+    &::after {
+        background-color: $color;
+        height: 1px;
+        margin-top: 1.5rem;
+        width: 6.25rem;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        right: 0px;
+    }
+
+    @include mobile {
+        font-size: 2rem;
+        padding: 0 3.75rem;
+
+        &::before,
+        &::after {
+            width: 3em;
+            margin-top: 1.3rem;
+        }
+    }
+}
+
+.post-container {
+    max-width: 47.5rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.position-relative {
+    position: relative;
+}
+
+.border-right {
+    border-right: 1px solid $border-color;
+}
+
+.widget-title {
+    padding: 0.625rem;
+    border: 0.0625rem solid $border-color;
+    text-align: center;
+    margin-bottom: 5rem;
+
+    h2 {
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        font-family: $roboto;
+        font-weight: 400;
+        margin-bottom: 0rem;
+        border: 0.0625rem solid $border-color;
+        padding: 0.9375rem;
+    }
+}
+
+.circle {
+    @include border-radius(100%);
+}
+
+.form-control {
+    padding: 0.625rem 1.0625rem;
+}
+
+.font-alt {
+    font-family: TheSecret !important;
+}
+
+.bg-pink{
+    background: $pink-light;
+}
+
+a#scrollUp {
+    right: 2.5rem;
+    bottom: 3.75rem;
+    font-size: 1.5625rem;
+    text-align: center;
+    line-height: 3.125rem;
+    @include border-radius(50%);
+    width: 3.125rem;
+    height: 3.125rem;
+    color: $white;
+    background-color: $primary;
+    @include transition();
+
+    &:hover {
+        background-color: $pink;
+    }
+}
+
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #f7f7f7;
+    z-index: 999999;
+}
+
+.preloader {
+    width: 3.125rem;
+    height: 3.125rem;
+    display: inline-block;
+    padding: 0rem;
+    text-align: left;
+    box-sizing: border-box;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -1.5625rem;
+    margin-top: -1.5625rem;
+
+    span {
+        position: absolute;
+        display: inline-block;
+        width: 3.125rem;
+        height: 3.125rem;
+        border-radius: 100%;
+        background: $primary;
+        -webkit-animation: preloader 1.3s linear infinite;
+        animation: preloader 1.3s linear infinite;
+        &:last-child {
+            animation-delay: -0.8s;
+            -webkit-animation-delay: -0.8s;
+        }
+    }
+}
+
+@keyframes preloader {
+    0% {
+        transform: scale(0, 0);
+        opacity: 0.5;
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes preloader {
+    0% {
+        -webkit-transform: scale(0, 0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: scale(1, 1);
+        opacity: 0;
+    }
+}
+
+.d-cel {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.img-zoom {
+    overflow: hidden;
+    img {
+        transform: scale(1);
+        @include transition();
+    }
+
+    &:hover img {
+        transform: scale(1.1);
+    }
+}
+
+.sp-title {
+    margin: 0px auto 60px;
+    font-size: 43px;
+    position: relative;
+    display: block;
+    text-align: center;
+
+    &::after {
+        background-color: #121213;
+        content: '';
+        height: 70px;
+        width: 1.5008px;
+        top: 65px;
+        right: 50%;
+        position: absolute;
+    }
+}
+
+.widget-line-bg {
+    @extend .overly;
+
+    &::before,
+    &::after {
+        height: 0.1875rem;
+        width: 28%;
+        left: 0;
+        top: 50%;
+        background: #2c2c2c;
+        transform: translateY(-50%);
+    }
+
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: auto;
+        right: 0rem;
+    }
+
+
+    h2 {
+        max-width: 35%;
+        margin: 0 auto 3.75rem;
+        text-align: center;
+        border: 0.0625rem solid $border-color;
+        padding: 1.125rem 0.625rem;
+        @extend .fs-sm;
+        color: $dark;
+        @extend .overly;
+        &::before {
+            background: none;
+            border: 0.0625rem solid #757575;
+            height: 4.375rem;
+            width: 107%;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            @include mobile{
+                height: 3.75rem;
+            }
+        }
+    }
+}
+
+.card {
+    border: none;
+}
+
+.pink-bg {
+    background-color: #f4eae2;
+}
+
+.border-top {
+    border-top: 1px solid $border-color;
+}
+
+.border-bottom {
+    border-bottom: 1px solid $border-color;
+}
+
+.owl-carousel {
+    .owl-nav {
+        >button {
+            display: inline-block;
+            position: absolute;
+            left: 3.125rem;
+            top: 45%;
+            transform: translateY(-50%);
+
+            &.owl-next {
+                left: auto;
+                right: 3.125rem;
+            }
+        }
+    }
+}

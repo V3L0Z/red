@@ -1,0 +1,111 @@
+
+ /*-------------------------------
+4. Footer
+-------------------------*/
+.instagram {
+    position: relative;
+
+    a.btn {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        width: auto;
+        font-size: 0.75rem;
+        padding: 0.9375rem 2.1875rem;
+
+        @include mobile {
+            top: 31%;
+        }
+    }
+
+    .insta-item {
+        flex-basis: 19%;
+
+        @include mobile {
+            flex-basis: 48%;
+            margin-bottom: 0.9375rem;
+        }
+    }
+}
+
+.footer-nav {
+    li {
+        display: inline-block;
+        margin-right: 1.875rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            font-family: $roboto;
+            letter-spacing: 0.0625rem;
+        }
+    }
+    @include tablet{
+        li{
+            margin-right: 1.25rem;
+        }
+    }
+}
+
+.footer {
+    @extend .overly;
+
+    &::before {
+        height: 0.3125rem;
+        top: auto;
+        bottom: 4.0625rem;
+        background-color: $dark;
+    }
+
+    .social-share a {
+        margin-right: 1.25rem;
+
+        @include notepad {
+            margin-right: 0.9375rem;
+        }
+    }
+
+    .f-subscribe {
+        a {
+            color: $primary;
+            font-family: $heading-font;
+            font-weight: 700;
+
+            i {
+                margin-right: 0.3125rem;
+            }
+        }
+
+    }
+}
+
+.footer-3 {
+    padding: 9.375rem 0 1.25rem;
+
+    &::before {
+        background-color: transparent;
+    }
+}
+
+.insta-abs {
+    .insta-wrap {
+        background-color: $white;
+        padding: 1.25rem;
+        top: 4.0625rem;
+        z-index: 2;
+    }
+}
+
+footer.footer.footer-4 {
+    padding-top: 2.8125rem;
+
+    &:before {
+        display: none;
+    }
+}

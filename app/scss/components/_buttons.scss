@@ -1,0 +1,61 @@
+.btn {
+    padding: 0.625rem 2.5rem;
+    @extend .fs-sm;
+    color: $dark;
+
+    &:focus,
+    &:active {
+        box-shadow: none;
+    }
+}
+
+.btn-unfill {
+    font-family: $heading-font;
+    font-size: 1rem;
+    font-weight: 600;
+    @include transition();
+    &.right {
+        display: block;
+        max-width: 9.375rem;
+        margin-left: auto;
+        margin-right: 2.5rem;
+        text-align: right;
+    }
+     img {
+        margin-left: 5px;
+        margin-top: -3px;
+    }
+    &:hover{
+        color: $color;
+        font-weight: 700;
+       
+    }
+}
+
+
+.btn-primary.active:focus,
+.btn-primary:active:focus,
+.show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: none;
+}
+
+.form-control:focus {
+    box-shadow: none;
+}
+
+.btn-light {
+    @include border-radius(0);
+    background-color: $pink-light;
+    border-color: $pink-light;
+
+    &:hover {
+        background-color: $pink;
+        border-color: $pink;
+    }
+}
+.btn-dark,.btn-primary{
+    color: $white;
+    &:hover{
+        color: $white;
+    }
+}

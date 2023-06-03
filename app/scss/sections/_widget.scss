@@ -1,0 +1,180 @@
+/* ====================================
+8. Widget
+ ====================================== */
+
+.sidebar{
+    @include mobile{
+        margin-top: 3.125rem;
+    }
+}
+.left-line {
+    @extend .overly;
+
+    &::before {
+        width: 0.0625rem;
+        left: 0.9375rem;
+        height: 100%;
+        background: #757575;
+    }
+    @include mobile{
+        &::before{
+            display: none;
+        }
+    }
+    @include tablet{
+        &::before{
+            display: none;
+        }
+    }
+}
+
+.widget {
+    margin-bottom: 3.75rem;
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        li a {
+            &:hover {
+                color: $primary;
+            }
+        }
+    }
+
+    &.latest-post {
+        .title-sm {
+            margin-bottom: 0rem;
+        }
+    }
+
+    &.category-widget {
+        li {
+            margin-top: 4.375rem;
+            margin-bottom: 0rem;
+            line-height: 2.1875rem;
+
+            a {
+                color: $color;
+                font-size: 1.125rem;
+                font-weight: 700;
+                font-family: $heading-font;
+
+                a:hover {
+                    color: $primary;
+                }
+
+                span {
+                    font-size: 4.5625rem;
+                    color: $gray;
+                    margin-right: 0.3125rem;
+
+                }
+            }
+        }
+    }
+    &.add {
+        text-align: center;
+    }
+    &.newsletter-widget{
+        border: 0.0625rem solid $border-color;
+        padding: 2.5rem 2.5rem 0.625rem;
+        margin-right: 0.9375rem;
+        margin-top: 5.625rem;
+        @extend .overly;
+        &::before{
+            background: #eeeeee;
+            border: 0.0625rem solid $border-color;
+            left: 0.625rem;
+            height: 108.2%;
+            top: 0.625rem;
+            z-index: -1;
+        }
+        p{
+            font-size: 0.9375rem;
+            line-height: 1.5625rem;
+            margin: 0.625rem 0 1.875rem;
+        }
+        .form-group{
+            input{
+                text-align: center;
+                padding: 0.75rem 1.25rem;
+                border: none;
+                color: #7e8184;
+                font-size: 0.875rem;
+            }
+        }
+        .btn{
+            @extend .fs-sm;
+            font-size: 0.875rem;
+            color: $white;
+            padding: 1.0625rem 2.5rem;
+        }
+        @include mobile{
+            margin: 0 0 5.625rem;
+        }
+    }
+    @include tablet{
+        margin-bottom: 1.875rem;
+    }
+    @include mobile{
+        margin-bottom: 2.5rem;
+    }
+    &.post-widget span.small {
+        font-size: 0.75rem;
+    }
+}
+
+.trending-post{
+    .sidebar{
+        @extend .overly;
+        &::before{
+            width: 0.0625rem;
+            left: 107%;
+            height: 121.9%;
+            top: -6.25rem;
+            background: $border-color;
+        }
+        &::after{
+            position: absolute;
+            content: "";
+            top: 52%;
+            height: 0.0625rem;
+            width: 107%;
+            left: 0;
+            background: $border-color;
+        }
+        @include tablet{
+            &::before{
+                top: -6.0625rem;
+            }
+        }
+        @include mobile{
+            &::before,&::after{
+                display: none;
+            }
+        }
+    }
+}
+.contact {
+    background-color: $primary;
+    width: 100%;
+    padding: 1.25rem;
+    text-align: center;
+    margin: 0 1.25rem;
+    @include mobile{
+        margin: 0 0 1.25rem;
+    }
+    a{
+        color: $white;
+        @extend .fs-sm;
+        display: block;
+        max-width: 70%;
+        margin: 0 auto;
+        line-height: 1.7;
+        @include tablet{
+            max-width: 100%;
+        }
+    }
+}

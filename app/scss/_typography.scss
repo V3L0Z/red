@@ -1,0 +1,76 @@
+/* ======================================
+1.2 FONTS FOR THEME
+========================================*/
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    line-height: 30px;
+    font-weight: 400;
+    position: relative;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: $heading-font;
+    font-weight: 700;
+    color: $dark;
+}
+
+a {
+    @include transition;
+    text-decoration: none;
+
+    &:focus,
+    &:hover {
+        color: $primary;
+    }
+}
+
+input,
+textarea {
+    color: $color;
+    width: 100%;
+    padding: 0.5rem 0.625rem;
+    border: 1px solid #e0e1e5;
+    background: $white;
+
+    &:focus {
+        outline: 0 none;
+
+    }
+
+    &::placeholder {
+        /* Chrome, Firefox, Opera, Safari 10.1+ */
+        color: $border-color;
+        opacity: 1;
+        /* Firefox */
+    }
+
+    &:-ms-input-placeholder {
+        /* Internet Explorer 10-11 */
+        color: $border-color;
+    }
+
+    &::-ms-input-placeholder {
+        /* Microsoft Edge */
+        color: $border-color;
+    }
+}
+.body-font{
+    font-family: $body-font;
+    margin: 1.25rem 0;
+    &.h4{
+        font-size: 1.1875rem;
+        line-height: 2.125rem;
+    }
+}

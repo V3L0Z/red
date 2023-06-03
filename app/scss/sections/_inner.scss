@@ -1,0 +1,190 @@
+
+/* ====================================
+9. Inner CSS
+ ====================================== */
+
+.cta {
+    background-color: $primary;
+    padding: 6.25rem 0;
+
+    h2 {
+        position: relative;
+        z-index: 1;
+        color: $white;
+        padding: 3.75rem;
+
+        @include mobile {
+            padding: 1.875rem;
+        }
+
+        &:before,
+        &:after {
+            position: absolute;
+            left: -8.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            content: "\f100";
+            font-family: "Font Awesome 5 Free";
+            font-size: 12.5rem;
+            opacity: .1;
+
+            @include tablet {
+                font-size: 7rem;
+                left: -1.5rem;
+            }
+
+            @include mobile {
+                display: none;
+            }
+
+            @include wide_mobile {
+                display: block;
+                font-size: 8rem;
+                left: -1rem;
+            }
+        }
+
+        &::after {
+            content: "\f101";
+            left: auto;
+            right: -8.75rem;
+
+            @include tablet {
+                right: -2rem;
+            }
+
+            @include wide_mobile {
+                right: -1rem;
+            }
+        }
+    }
+}
+
+.service-thumb {
+    margin-top: -7.5rem;
+}
+
+.services .item {
+    border-top: 2px solid #f4eae2;
+
+    h5 {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 0.8125rem;
+        text-align: left;
+        margin: 0.625rem 0 0px;
+        line-height: 1;
+    }
+}
+
+.newsletter {
+    .sec-title {
+        font-size: 2.625rem;
+
+        @include notepad {
+            font-size: 2.4rem;
+        }
+
+        @include tablet {
+            font-size: 2.3rem;
+        }
+        @include mobile {
+            font-size: 2.25rem;
+        }
+    }
+
+    p {
+        max-width: 38rem;
+        margin: 1.875rem auto;
+    }
+
+    form {
+
+        .form-group {
+            flex-basis: 37%;
+
+            @include mobile {
+                margin-bottom: 1.125rem;
+            }
+            @include tablet{
+                flex-basis: 35%;
+            }
+            .form-control {
+                padding: 1rem 1.0625rem;
+                border: none;
+                border-radius: 0px;
+            }
+        }
+
+        .btn {
+            border-radius: 0;
+        }
+
+    }
+}
+
+
+.instagram {
+    .ins-item {
+        @include mobile {
+            margin: 0 0 1.875rem;
+        }
+    }
+
+    ul li {
+        padding-right: 2.5rem;
+
+        @include tablet {
+            margin: 0.9375rem;
+        }
+
+        @include mobile {
+            margin: 0.9375rem;
+            padding-right: 1.1rem;
+        }
+
+        a {
+            color: #979797;
+            text-transform: uppercase;
+            font-size: 0.8125rem;
+            font-family: $roboto;
+
+            i {
+                color: #121213;
+                font-size: 1.125rem;
+                margin-bottom: 0.3125rem;
+                display: block;
+                @include transition;
+            }
+        }
+
+        &:hover a {
+            color: $primary;
+
+            i {
+                transform: translateY(-0.3125rem);
+                color: $primary;
+            }
+        }
+
+    }
+}
+
+.cat-card {
+    span {
+        font-size: 4.5625rem;
+        color: #d2d4d6;
+        margin-bottom: 0rem;
+        line-height: 1;
+    }
+}
+
+.happy-card{
+    max-width: 85%;
+    h2 {
+        max-width: 6.875rem;
+        margin: 0 auto;
+    }
+}

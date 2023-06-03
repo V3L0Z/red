@@ -1,0 +1,74 @@
+
+/* =======================================================
+
+Template Name: Amelia - Magazine and Blog Template
+Author Name: radiuzz
+Author Url: https://themeforest.net/user/radiuzz/portfolio
+Code By: Tariqul Islam
+Description: A Bootstrap 5 Minimal Magazine and Blog Template
+Version: 1.0
+License: GPL v2 or later
+License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+Tags: blog, magazine, news, minimal, personal blog, blogging
+
+============================================================*/
+
+/* Table of content
+--------------------------------------------
+1. General
+1.1 Boostrap Customize
+2. Common CSS
+3. Header 
+4. Footer
+5. Banner
+6. Blog
+7. NewsLetter
+8. Widget
+9. Inner CSS
+10. Post Styles
+11. Page Styles
+12. Testimonials
+13. Contact
+
+------------------------------------------*/
+
+
+
+ /*=========================================
+ 1. General
+ ===========================================
+ */
+ // IMPORT FONT
+
+ @import url('https://fonts.googleapis.com/css2?family=Cormorant:wght@400;700&family=Maven+Pro&family=Roboto:wght@400;500&display=swap');
+
+ @font-face {
+     font-family: TheSecret;
+     src: url('../webfonts/TheSecret-Regular.ttf');
+ }
+
+
+ // IMPORT BASE
+ @import 'media-quaries';
+ @import 'variable';
+ @import 'bs-custom';
+ @import 'variable';
+ @import 'mixins';
+ @import 'typography';
+ @import 'theme';
+ @import 'header';
+ @import 'footer';
+
+ // IMPORT  COMPONENT 
+ @import 'components/buttons';
+
+ // IMPORT THE SECTIONS 
+ @import 'sections/banner';
+ @import 'sections/blog';
+ @import 'sections/newsletter';
+ @import 'sections/widget';
+ @import 'sections/inner';
+ @import 'sections/post';
+ @import 'sections/pages';
+ @import 'sections/testimonial';
+ @import 'sections/contact';

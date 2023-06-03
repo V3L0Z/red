@@ -1,0 +1,535 @@
+/* ====================================
+6. Blog
+ ====================================== */
+
+.entry-meta a {
+    position: relative;
+    color: #c55e3e;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    letter-spacing: 1.2px;
+    margin-left: 1.875rem;
+    &::before {
+        background-color: #c55e3e;
+        content: "";
+        height: 0.125rem;
+        width: 1.25rem;
+        position: absolute;
+        left: -1.875rem;
+        top: 0.3125rem;
+    }
+}
+
+.single-entry {
+    .entry-thumb {
+        position: relative;
+        @extend .overly;
+        overflow: hidden;
+
+        &::before {
+            background: $white;
+            z-index: 1;
+            @include transition();
+            @include opacity(0);
+        }
+
+        img {
+            transform: scale(1);
+            @include transition;
+        }
+
+        .entry-share {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 6.25rem;
+            transform: translate(-50%, -20%);
+            justify-content: space-around;
+            text-align: center;
+            z-index: 2;
+            @include opacity(0);
+            @include transition;
+
+            a {
+                color: $primary;
+                font-size: 0.875rem;
+                line-height: 2rem;
+                height: 2.1875rem;
+                width: 2.1875rem;
+                border: 0.125rem solid $primary;
+                border-radius: 10px 0 10px 0;
+                display: block;
+                transition: all 0.3s;
+
+                &:hover {
+                    background-color: $primary;
+                    border-color: $primary;
+                }
+            }
+        }
+    }
+
+    h3 {
+        margin-top: 0.9375rem;
+
+        a {
+            color: #121213;
+        }
+    }
+
+    p {
+        line-height: 1.625rem;
+        font-size: 0.875rem;
+    }
+
+    &:hover .entry-thumb {
+        &::before {
+            @include opacity(.7);
+        }
+
+        img {
+            transform: scale(1.05);
+        }
+    }
+
+    &:hover .entry-share {
+        @include opacity(1);
+        transform: translate(-50%, -50%);
+
+        a:hover {
+            color: $white;
+        }
+    }
+
+    &:hover h3 a {
+        color: $primary;
+    }
+
+    &.featured-entry {
+        h3 {
+            font-size: 2.375rem;
+        }
+    }
+
+    &.list-entry {
+        display: flex;
+        align-items: center;
+
+        .entry-thumb {
+            flex-basis: 45%
+        }
+
+        .entry-content {
+            flex-basis: 55%;
+            padding: 1.25rem 1.875rem;
+
+            h3 {
+                font-size: 1.75rem;
+                line-height: 1.5;
+                @include tablet{
+                    font-size: 1.625rem;
+                }
+            }
+
+            .btn-unfill {
+                margin-left: auto;
+                margin-right: 0rem !important;
+            }
+        }
+    }
+    @include tablet{
+        h3{
+            font-size: 1.3125rem;
+        }
+    }
+    @include mobile{
+        &.list-entry{
+            display: block;
+            .entry-content{
+                padding: 0.9375rem 0;
+            }
+        }
+    }
+}
+
+.entry-hover {
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    z-index: 2;
+    width: 60%;
+    @include opacity(0);
+    @include transition();
+}
+
+.trending-post {
+    padding: 1.875rem 0 6.25rem;
+    overflow: hidden;
+    .line-top{
+       @extend .overly;
+        &::before{
+            height: 0.0625rem;
+            background: $border-color;
+            top: 3.75rem;
+            @include mobile{
+                display: none;
+            }
+        }
+    }
+    .sec-title {
+        @include tablet{
+            margin-left: 4rem;
+        }
+    }
+    .single-entry {
+        h3 {
+            margin-bottom: 0.9375rem;
+            font-size: 2.25rem;
+        }
+
+        &:hover {
+            .entry-thumb::before {
+                @include opacity(.85);
+            }
+
+            .entry-hover {
+                @include opacity(1);
+                bottom: 1.875rem;
+            }
+        }
+
+        &.sm-entry {
+            .entry-hover {
+                width: 85%;
+            }
+
+            h3 {
+                font-size: 1.5rem;
+            }
+
+        }
+        @include mobile{
+            margin-bottom: 1.875rem;
+        }
+    }
+    .sidebar{
+        .entry-title{
+            font-size: 1.5rem;
+        }
+    }
+}
+
+.feature {
+    .entry-title {
+        font-size: 1.25rem;
+    }
+    @include mobile{
+        .entry-content{
+            padding: 0 1.875rem;
+        }
+    }
+}
+
+.entry-sm {
+    @extend .overly;
+
+    @include tablet {
+        margin-bottom: 2.5rem;
+    }
+
+    @include mobile {
+        margin-bottom: 2.5rem;
+    }
+
+    &::before {
+        content: "=";
+        background: transparent;
+        left: 100%;
+        top: 21%;
+        transform: translateX(-50%);
+        width: 30px;
+        color: $text-muted;
+        font-size: 15px;
+        font-family: 'Roboto';
+        height: 20px;
+    }
+
+    img {
+        @include transition;
+    }
+
+    span {
+        font-size: 0.75rem;
+        font-family: $roboto;
+        text-transform: uppercase;
+    }
+
+    &:hover img {
+        transform: translateY(-5px);
+    }
+}
+
+
+
+.fav-post .row:nth-child(2)>div:last-child .entry-sm::before {
+    content: "";
+}
+
+@include tablet {
+    .fav-post .row:nth-child(2)>div:nth-child(2n) .entry-sm::before {
+        content: "";
+    }
+}
+
+.read-more {
+    margin-top: 1.875rem;
+    display: inline-block;
+    padding: 0.75rem 1.875rem;
+    text-transform: uppercase;
+    color: #121213;
+    font-weight: 700;
+    background: -moz-linear-gradient(top, #ffffff 0%, #ffffff 50%, #f4eae2 51%, #f4eae2 100%);
+    background: -webkit-linear-gradient(top, #ffffff 0%, #ffffff 50%, #f4eae2 51%, #f4eae2 100%);
+    background: linear-gradient(to bottom, #ffffff 0%, #ffffff 50%, #f4eae2 51%, #f4eae2 100%);
+}
+
+
+.featured {
+    img {
+        border-radius: 50%;
+        margin-right: 1.875rem;
+    }
+
+    .driver {
+        height: 0.0625rem;
+        background-color: #d2d4d6;
+        margin: 2.25rem 0rem;
+        @extend .overly;
+
+        &::before,
+        &::after {
+            left: 1.25rem;
+            width: 1.875rem;
+            background-color: #fff;
+            z-index: -1;
+        }
+
+        &:after {
+            position: absolute;
+            content: "";
+            right: 1.25rem;
+            top: 0;
+            height: 100%;
+            left: auto;
+        }
+    }
+}
+
+
+/**
+* ============================
+*  7.Tab Post
+* ============================
+*/
+.tab-post {
+    background-size: cover;
+    background-position: center;
+    padding: 18.75rem 0rem 1.25rem;
+    @extend .overly;
+    background-attachment: fixed;
+
+    &::before {
+        background-color: #302217;
+        @include opacity(.75);
+    }
+
+    .content {
+        span {
+            font-family: $roboto;
+            padding-left: 1.875rem;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            @extend .overly;
+            letter-spacing: 0.0625rem;
+
+            &::before {
+                background-color: $white;
+                height: 0.0938rem;
+                width: 1.25rem;
+                top: 0.3125rem;
+                @include transition();
+            }
+
+            a {
+                color: $white;
+            }
+
+            &:hover {
+                &::before {
+                    background-color: $primary;
+                }
+
+                a {
+                    color: $primary;
+                }
+            }
+        }
+
+        h2 {
+            margin-top: 2.5rem;
+
+            a {
+                color: #fff;
+            }
+        }
+    }
+}
+
+
+.tab-post .content {
+    position: relative;
+    z-index: 3;
+}
+
+
+
+.tab-post .tab-content {
+    margin-bottom: 9.375rem;
+}
+
+.tab-post .nav-pills li {
+    width: 25%;
+
+    @include mobile {
+        width: 100%;
+    }
+}
+
+.tab-post .nav-pills li a {
+    padding: 1.875rem 1.5625rem 1.5625rem 0rem;
+    border-top: 0.0625rem solid #d2d4d6;
+    border-radius: 0rem;
+    color: #fff;
+    line-height: 1.625rem;
+    position: relative;
+}
+
+.tab-post .nav-pills li a::before {
+    position: absolute;
+    content: "";
+    height: 0.1875rem;
+    background-color: #fff;
+    width: 80%;
+    top: -2px;
+    left: 0;
+    opacity: 0;
+    transition: .4s;
+}
+
+.tab-post .nav-pills li a.active {
+    background-color: transparent;
+    border-radius: 0rem;
+}
+
+.tab-post .nav-pills li a.active::before {
+    opacity: 1;
+    width: 100%;
+}
+
+/**
+* ============================
+*  8.Latest Post
+* ============================
+*/
+
+.latest-post {
+    margin-bottom: 0.625rem;
+    @include notepad{
+        padding-bottom: 3.125rem;
+    }
+    span.entry-meta {
+        margin-left: 1.875rem;
+    }
+
+    .btn-unfill {
+        display: block;
+        max-width: 9.375rem;
+        margin-left: auto;
+        margin-right: 2.5rem;
+        text-align: right;
+    }
+}
+
+.entry-navigation.text-center span {
+    padding: 0 1.25rem;
+    text-transform: uppercase;
+    font-size: 1.125rem;
+}
+
+.entry-navigation span:first-child {
+    @extend .overly;
+
+    &::before {
+        width: 0.0625rem;
+        left: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 4.8125rem;
+        background-color: $border-color;
+    }
+}
+
+.categories {
+    h4 {
+        font-size: 16px;
+        padding: 0 0.9375rem;
+        display: inline-block;
+        @extend .overly;
+
+        &::before,
+        &::after {
+            width: 0.125rem;
+            height: 0.125rem;
+            top: 50%;
+            background: $black;
+            transform: translateY(-50%);
+        }
+
+        &::after {
+            position: absolute;
+            content: "";
+            right: 0;
+        }
+    }
+
+    .single-entry {
+        .entry-thumb {
+            &::after {
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                width: 90%;
+                height: 90%;
+                border: 0.1875rem solid $white;
+                content: "";
+                z-index: 1;
+                @include mobile{
+                    width: 80%;
+                }
+            }
+        }
+    }
+}
+
+.posts-3 {
+    @extend .latest-post;
+
+    .single-entry {
+        border-bottom: 0.0625rem solid #e5e5e5;
+        padding-bottom: 1.875rem;
+        margin-bottom: 1.875rem;
+    }
+} 

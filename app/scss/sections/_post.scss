@@ -1,0 +1,658 @@
+/* ====================================
+10. Post Style
+ ====================================== */
+.promo-parallax {
+    padding: 18.75rem 0;
+    background-size: cover;
+    background-position: center center;
+
+    @include notepad {
+        padding: 12.5rem 0;
+    }
+
+    @include tablet {
+        padding: 12.5rem 0;
+    }
+
+    @include mobile {
+        padding: 11.25rem 0;
+    }
+}
+
+blockquote {
+    background: $color;
+    @extend .overly;
+    padding: 4.0625rem 3.125rem 4.0625rem 9.375rem;
+    overflow: hidden;
+
+    @include mobile {
+        padding: 3.75rem 3.125rem;
+    }
+
+    &:before {
+        content: "\f100";
+        font-family: Font Awesome\ 5 Free;
+        font-size: 13rem;
+        font-weight: 800;
+        color: #464647;
+        background: transparent;
+        font-style: italic;
+        left: -3.6875rem;
+        top: 1.3125rem;
+    }
+
+    p {
+        @extend .h4;
+        font-size: 1.8125rem;
+        line-height: 2.25rem;
+        color: $white;
+        margin-bottom: 1.875rem;
+    }
+
+    span {
+        color: $gray-b;
+    }
+
+}
+
+.inner-post {
+    padding: 15.625rem 0;
+    margin: 1.875rem 0;
+}
+
+.single-post {
+    h1 {
+        margin: 1.25rem 0;
+    }
+
+    ul {
+        li {
+            line-height: 2.75rem;
+        }
+    }
+
+    .author-meta {
+        a {
+            color: $dark;
+
+            &:hover {
+                color: $primary;
+            }
+        }
+
+    }
+
+    .s-share li {
+        display: inline-block;
+        margin-right: 0.3125rem;
+
+        &:last-child {
+            margin-right: 0;
+        }
+
+        a {
+            display: inline-table;
+            padding: 0.625rem 1.125rem;
+            width: 8.625rem;
+            height: 3.125rem;
+            border: 0.0625rem solid #c55e3e;
+            color: $primary;
+            text-align: center;
+
+            @include notepad {
+                width: 7.1875rem;
+            }
+
+            @include tablet {
+                width: 8.125rem;
+            }
+
+            i {
+                display: table-cell;
+                vertical-align: middle;
+            }
+        }
+
+        &:hover {
+            a {
+                color: $white;
+                background-color: $primary;
+                border: 0.0625rem solid $primary;
+            }
+        }
+
+        @include mobile {
+            margin: 0.125rem;
+        }
+    }
+
+
+    .quote-alt.alignleft {
+        min-height: 20rem;
+        width: 31.25rem;
+        max-width: 31.25rem;
+        margin-left: 3.75rem;
+        margin-right: 1.875rem;
+        background-position: center center;
+        background-size: cover;
+        @extend .overly;
+
+        &::before {
+            background: $white;
+            z-index: -1;
+            top: 50%;
+            left: 50%;
+            width: 80%;
+            height: 75%;
+            transform: translate(-50%, -50%)
+        }
+
+        p {
+            padding: 5.625rem 5.625rem 3.75rem;
+            line-height: 1.875rem;
+            color: $dark;
+        }
+
+        span {
+            display: block;
+            color: $pink;
+            margin-top: 1.25rem;
+            @extend .fs-sm;
+        }
+
+
+        @include mobile {
+            margin-left: auto;
+            width: 100%;
+
+            &::before {
+                height: 78%;
+            }
+
+            p {
+                padding: 5.625rem 4.6875rem 3.75rem;
+            }
+
+        }
+    }
+
+    .owl-nav {
+        font-size: 1.625rem;
+        @include transition();
+
+        &:hover {
+            color: $primary;
+        }
+    }
+}
+
+// media post type
+
+.youtube-media {
+    margin-top: -28.125rem;
+}
+
+.self-video {
+    position: relative;
+
+    .controls {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        span.fon-con {
+            color: #fff;
+            cursor: pointer;
+            font-size: 4.375rem;
+        }
+    }
+}
+
+.post-audio {
+    position: relative;
+    z-index: 1;
+
+    audio {
+        position: absolute;
+        bottom: 1.25rem;
+        left: 1.25rem;
+        width: 93%;
+    }
+
+}
+
+.post-form {
+    padding: 2.1875rem 0;
+    border-bottom: 0.0625rem solid;
+    border-top: 0.0625rem solid;
+    margin: 2.5rem 0;
+
+    .form-group {
+        flex-basis: 37%;
+        margin-bottom: 0;
+        @include mobile {
+            flex-basis: 100%;
+            margin-bottom: 1.25rem;
+        }
+
+        input {
+            border: 0 none;
+            color: #7e8184;
+            font-size: 0.875rem;
+            background: #f6f6f6;
+            padding: 0.875rem 0.9375rem;
+            @include border-radius(0);
+        }
+
+    }
+
+    .btn {
+        @extend .btn-light;
+    }
+}
+
+.post-tags {
+    span {
+        @extend .fs-sm;
+        color: #a2a2a7;
+        font-weight: 500;
+        a,&.current {
+            color: $dark;
+            &:hover{
+                color: $primary;
+            }
+        }
+    }
+    &.overly{
+        &::before{
+            height: 0.0625rem;
+            background: $border-color;
+            top: 0.3125rem;
+        }
+    }
+}
+
+
+.more-articles {
+    .entry-title {
+        font-size: 1.125rem;
+        line-height: 1.625rem;
+    }
+}
+
+.about-author {
+    border: 0.0625rem solid #e0e0e0;
+
+    p {
+        font-size: 0.9375rem;
+    }
+
+    .social-share {
+        a {
+            color: $primary;
+            font-size: 16px;
+            margin-right: 0.875rem;
+        }
+    }
+}
+
+//Comment
+
+.post-comments {
+    ol {
+        @include list-clear;
+        padding: 2.8125rem 0rem 1.875rem;
+
+        li {
+            margin-bottom: 4.0625rem;
+            @extend .overly;
+
+            &::before {
+                background: transparent;
+                border-bottom: 0.0625rem dotted #ebebeb;
+                height: 0.0625rem;
+                top: 127%;
+            }
+
+            &:first-child::before {
+                top: 111%;
+
+                @include mobile {
+                    top: 100%;
+                }
+            }
+
+            article.comment-body {
+                position: relative;
+
+                .comment-thumb {
+                    float: left;
+
+                    @include mobile {
+                        float: none;
+                    }
+                }
+
+                .comment-details {
+                    margin-left: 5.3125rem;
+
+                    .comment-name {
+                        font-size: 18x;
+                        color: $color;
+                        margin-bottom: 0rem;
+                    }
+
+                    .c-reply {
+                        @extend .fs-sm;
+                        font-size: 0.625rem;
+                        padding-top: 0.9375rem;
+                        color: $color;
+                        letter-spacing: 0.0625rem;
+                    }
+
+                    p {
+                        max-width: 90%;
+                        margin: 0.9375rem 0 0.3125rem;
+                        font-size: 0.9375rem;
+                        line-height: 1.625rem;
+                        color: #2d2d2e;
+                    }
+
+                    .c-date {
+                        position: absolute;
+                        right: 0;
+                        top: 0rem;
+                        @extend .fs-sm;
+                        font-size: 0.6875rem;
+                    }
+                }
+            }
+
+            .children {
+                padding: 2.125rem 0rem 0 4.6875rem;
+
+                li::before {
+                    display: none;
+                }
+
+                .comment-body {
+                    .comment-details {
+                        margin-left: 5.3125rem;
+                    }
+                }
+            }
+
+            &:last-child {
+                margin: 0;
+            }
+
+            @include mobile {
+                margin-bottom: 2.8125rem;
+
+                &::before {
+                    top: 115%;
+                }
+
+                article.comment-body .comment-details {
+                    margin: 1.25rem 0 0;
+                }
+
+                .children {
+                    padding: 1.875rem 1.875rem 3.75rem;
+
+                    .comment-body .comment-details {
+                        margin: 1.25rem 0 0;
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+/*==================================================
+   Comments Form
+   ====================================================*/
+.write-comments {
+    margin-top: 1.875rem;
+    h2.comment-title {
+        @extend .fs-sm;
+        font-size: 0.8125rem;
+        font-weight: 700;
+        color: #2c2c2c;
+    }
+    .form-group{
+        margin-bottom: 1.875rem;
+    }
+}
+form {
+    .form-group {
+        @include clearfix;
+
+        &.half-form {
+            width: 48%;
+            float: left;
+            +.half-form {
+                float: right;
+            }
+        }
+        input,
+        textarea {
+            padding: 0.625rem 0 0.625rem 0.9375rem;
+            border: 0.0625rem solid $gray;
+            font-size: 0.875rem;
+            width: 100%;
+            border-radius: 0.4375rem;
+            color: #909598;
+            &::placeholder {
+                color: #909598;
+            }
+        }
+
+        textarea {
+            height: 11.25rem;
+            padding-left: 0.9375rem;
+        }
+    }
+
+    .btn {
+        border: none;
+        padding: 0.9375rem 2rem;
+    }
+}
+
+/* post style 4 */
+.single-post-header {
+    .bg-gray {
+        background-color: #eeeeee;
+    }
+}
+
+.single-post {
+    .entry-content>* {
+        max-width: 47.5rem;
+        margin-left: auto;
+        margin-right: auto;
+
+        &img {
+            max-width: 100%;
+        }
+
+        &.alignleft {
+            float: left;
+            margin: 0.3125rem 1.25rem 1.25rem 0;
+
+            @include mobile {
+                margin: 0.625rem 0;
+                float: none;
+            }
+        }
+
+        &.alignright {
+            float: right;
+            margin: 0.3125rem 0rem 1.25rem 1.25rem;
+
+            @include mobile {
+                margin: 0.625rem 0;
+                float: none;
+            }
+        }
+
+        &.alignwide {
+            max-width: 53.125rem;
+            padding-left: 0;
+            padding-right: 0;
+        }
+
+        &.alignfull {
+            max-width: 100%;
+        }
+
+    }
+
+
+    &.w-100 {
+        .entry-content>* {
+            max-width: 100%;
+        }
+    }
+
+    .block-gallery {
+        .gallery-item {
+            padding: 0 0.5rem;
+            flex-basis: 49%;
+
+            &.b-col-3 {
+                flex-basis: 33%;
+
+            }
+
+        }
+
+        @include mobile {
+            flex-direction: column;
+        }
+    }
+
+    .post-quote {
+        @extend .overly;
+
+        @include mobile {
+            padding: 0 3.125rem;
+        }
+
+        &::before,
+        &::after {
+            font-weight: 900;
+            content: "\f10d";
+            font-family: "Font Awesome 5 Free";
+            font-size: 4.0625rem;
+            background: transparent;
+            left: 1.5625rem;
+            width: 3.125rem;
+            height: 4.375rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: $primary;
+            opacity: 1;
+
+            @include notepad {
+                left: -1.5625rem;
+                top: 40%;
+            }
+
+            @include tablet {
+                left: -1.5625rem;
+                top: 40%;
+            }
+
+            @include mobile {
+                left: 0rem;
+                top: 40%;
+                font-size: 2.5rem;
+            }
+        }
+
+        &::after {
+            position: absolute;
+            content: "\f10e";
+            left: auto;
+            right: 1.25rem;
+
+            @include notepad {
+                right: -1.5625rem;
+            }
+
+            @include tablet {
+                right: -1.5625rem;
+            }
+
+            @include mobile {
+                right: 0rem;
+            }
+        }
+
+        .single-quote {
+
+            @include mobile {
+                &::before {
+                    font-size: 8.125rem;
+                }
+
+                h2 {
+                    font-size: 1.6875rem;
+                    line-height: 2.1875rem;
+                }
+            }
+        }
+    }
+}
+
+.promo-post {
+    @extend #hero-slider-two;
+}
+
+.entry-gallery {
+    .owl-carousel .owl-nav>button {
+        color: $white;
+        height: 2.5rem;
+        width: 2.5rem;
+        top: 45%;
+        transform: translateY(-50%);
+        border: 0.125rem solid #fff;
+        border-radius: 50%;
+        left: 2.5rem;
+        font-size: 1rem;
+        position: absolute;
+        @include transition();
+
+        &.owl-next {
+            top: 55%;
+        }
+
+        &.disabled,
+        &:hover {
+            background: #fff;
+            color: $dark;
+            border: 0.125rem solid $white;
+        }
+    }
+}
+
+.full-width-gallery {
+    .owl-nav button {
+        transform: rotate(-90deg);
+        font-family: $heading-font;
+        size: 2.625rem;
+        color: $dark;
+
+        &.owl-prev {
+            left: -3.75rem;
+        }
+
+        &.owl-next {
+            right: -3.75rem;
+        }
+    }
+}

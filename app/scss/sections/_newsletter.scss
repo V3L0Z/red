@@ -1,0 +1,130 @@
+/* ====================================
+7. NewsLetter
+ ====================================== */
+.newsletter {
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.newsletter .inner {
+    padding: 1.875rem 0rem;
+    border-top: 0.0625rem solid $border-color;
+    border-bottom: 0.0625rem solid $border-color;
+    h4{
+        font-weight: 400;
+        line-height: 1.5;
+    }
+    .form-control {
+        border: 0rem;
+        background-color: #f6f6f6;
+        border-radius: 0rem;
+        padding: 0.75rem 1.25rem;
+        margin-right: 0.625rem;
+    }
+    input-group-text {
+        border: 0rem;
+        background-color: #f4eae2;
+        border-radius: 0rem;
+        padding-left: 1.875rem;
+        padding-right: 1.875rem;
+        text-transform: uppercase;
+    }
+    &.right {
+        margin-left: 1.25rem;
+        padding: 3rem 0rem;
+        button.input-group-text {
+            background: $pink;
+            border: none;
+            padding: 0.625rem 3.125rem;
+        }
+        @include tablet{
+            margin: 0.9375rem 0 0;
+            input{
+                width: 100%;
+                margin-bottom: 1.25rem;
+            }
+        }
+        @include mobile{
+            margin: 0.9375rem 0 0;
+            button.input-group-text{
+                padding: 0.625rem 1.5625rem;
+            }
+        }
+       
+    }
+}
+.category{
+    .card{
+        @include mobile{
+            margin-bottom: 1.875rem;
+        }
+    }
+}
+
+.newsletter .inner.left {
+    margin-right: 1.25rem;
+    @include tablet{
+        margin: 0.9375rem 0 0;
+    }
+    @include mobile{
+        margin: 0.9375rem 0 0;
+    }
+}
+
+.newsletter .inner.left1 {
+    margin-right: 0rem;
+}
+
+.newsletter .left-side {
+    position: relative;
+    @include tablet{
+        &::after{
+            display: none;
+        }
+    }
+    &::after {
+        background-color: $border-color;
+        content: '';
+        width: 0.0625rem;
+        height: 4.6875rem;
+        position: absolute;
+        left: 100%;
+        top: 1.875rem;
+        @include mobile{
+            display: none;
+        }
+    }
+}
+
+.newsletter-two h2 {
+    font-size: 2.5625rem;
+    margin-bottom: 0rem;
+}
+
+.newsletter-two p {
+    font-size: 1.0625rem;
+    max-width: 38.75rem;
+    margin: 0 auto;
+}
+
+.newsletter-two .form-control {
+    padding: 0.75rem 1.25rem;
+    border: 0rem;
+    border-radius: 0rem;
+}
+
+.newsletter-two .btn {
+    padding: 0.5rem 1.25rem;
+    background-color: #121213;
+    color: #fff;
+    flex-basis: 20%;
+}
+
+.newsletter-two {
+    background-image: url(../images/newsletter-bg.jpg);
+    background-size: cover;
+    padding: 8.125rem 0 6.875rem;
+}
+
+.form-group {
+    flex-basis: 38%;
+}
