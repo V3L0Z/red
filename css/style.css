@@ -13048,7 +13048,7 @@ button.search.icon-button i {
 .footer:before {
   height: 0.3125rem;
   top: auto;
-  bottom: 4.0625rem;
+  bottom: 5rem;
   background-color: #121213;
 }
 
@@ -15645,8 +15645,13 @@ form .btn {
 }
 
 .products-row {
-    display: flex;
-    justify-content: space-between;
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-row {
+  display: flex;
+  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */
